@@ -1,4 +1,6 @@
+import { Reports } from "@/components/reports";
+
 const Report = () => {
-  return <div>Report Page</div>;
+  return <Reports />;
 };
 export default Report;

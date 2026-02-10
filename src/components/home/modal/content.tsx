@@ -4,21 +4,26 @@ import { Form, Input, Button, DatePicker, TextArea, Dialog, Radio, Space } from 
 import { ADD_TYPE_VALUE, AddFormValues } from "../types";
 import { AddTypeOptions } from "../const";
 import { DatePickerRef } from "antd-mobile/es/components/date-picker";
+import { addPost } from "@/service/api";
 
 export const ModalContent = ({
-    showModal,
     setShowModal,
     addType,
 }: {
-    showModal: boolean;
     setShowModal: (showModal: boolean) => void;
     addType: ADD_TYPE_VALUE;
 }) => {
     const [form] = Form.useForm<AddFormValues>()
 
-    const onSubmit = () => {
+    const onSubmit = async () => {
         const values = form.getFieldsValue()
         console.log("🚀 ~ onSubmit ~ values:", values)
+        const res = await addPost(values)
+        console.log("🚀 ~ onSubmit ~ res:", res)
+        if (res?.code === 200) {
+            setShowModal(false)
+            form.resetFields();
+        }
     }
     const onClose = () => {
         setShowModal(false)

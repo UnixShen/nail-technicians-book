@@ -17,7 +17,7 @@ export const ModalItem: React.FC<ModalItemProps> = ({
             onClose={() => setShowModal(false)}
             closeOnMaskClick
             title={<div className="text-sm font-semibold">{title}</div>}
-            content={<ModalContent showModal={showModal} setShowModal={setShowModal} addType={addType} />}
+            content={<ModalContent setShowModal={setShowModal} addType={addType} />}
         />
     )
 }
