@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react';
 import { ADD_TYPE_VALUE, AddFormValues } from "@/types";
 import { getPosts, deletePost } from "@/service/api";
 
-import { List, Space, Button, Toast } from 'antd-mobile';
+import { List, Space, Button } from 'antd-mobile';
 import { BillOutline, UserOutline } from 'antd-mobile-icons';
 
 export const Reports = () => {
   const [type, setType] = useState<ADD_TYPE_VALUE>(ADD_TYPE_VALUE.ADD_INCOME);
   const [data, setData] = useState<AddFormValues[]>([]);
 
-  const handleSolve = async (type: ADD_TYPE_VALUE) => {
+  const handleSolve = async (type: ADD_TYPE_VALUE = ADD_TYPE_VALUE.ADD_INCOME) => {
     setType(type);
     const res = await getPosts(type);
     if (res?.status === 200) {
@@ -34,7 +34,8 @@ export const Reports = () => {
   }
 
   useEffect(() => {
-    handleSolve(type);
+    // eslint-disable-next-line
+    handleSolve();
   }, [])
 
   return <>

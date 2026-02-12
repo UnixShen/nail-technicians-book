@@ -8,10 +8,10 @@ export const success = <T>(
   return { status, message, data };
 };
 
-export const error = (
+export const error = <T>(
   message = "Internal Server Error",
   status = BUSINESS_STATUS_CODE.ERROR,
-  data: any = null,
+  data?: T,
 ) => {
   return { status, message, data };
 };

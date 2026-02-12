@@ -1,6 +1,6 @@
 
-import { Header } from "@/app/layout/header"; // Assuming header is in this path
-import { Footer } from "@/app/layout/footer"; // Assuming you have a footer
+import { Header } from "@/components/layout/header"; // Assuming header is in this path
+import { Footer } from "@/components/layout/footer"; // Assuming you have a footer
 
 export default function Layout({
   children,

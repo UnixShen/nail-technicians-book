@@ -11,7 +11,7 @@ const nextConfig = {
   transpilePackages: ['antd-mobile'],
   // ====================== 核心：Cloudflare 适配 ======================
   // 1. 静态导出配置（配合 @cloudflare/next-on-pages 构建产物）
-  // output: "export",
+  output: "export",
   // 2. 禁用 Cloudflare 不兼容的 Next.js 内置特性
   images: {
     unoptimized: true, // Cloudflare 暂不兼容 Next.js 16 图片优化新特性，需禁用
