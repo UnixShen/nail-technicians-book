@@ -9,10 +9,13 @@ export const withApiHandler = (
     return async (request: NextRequest) => {
         try {
             return await handler(request);
-        } catch (err: any) {
-            console.error(err);
+        } catch (err: unknown) {
+            const errorMessage =
+                typeof err === "object" && err !== null && "message" in err
+                    ? (err as { message: string }).message
+                    : "Internal Server Error";
             return Response.json(
-                error(err.message || "Internal Server Error", defaultStatus),
+                error(errorMessage, defaultStatus),
                 { status: defaultStatus }
             );
         }

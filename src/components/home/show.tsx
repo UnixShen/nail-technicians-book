@@ -3,14 +3,14 @@ import { HomeDataItem } from '@/types';
 import { queryHomeList } from '@/service/api'
 export const Show = () => {
     const [totalData, setTotalData] = useState<HomeDataItem[]>([]);
-    const handleGetData = async () => {
+    
+    useEffect(() => {
+        const handleGetData = async () => {
         const res = await queryHomeList();
         if (res.status === 200) {
             setTotalData(res.data);
         }
     }
-
-    useEffect(() => {
         handleGetData();
     }, [])
     return (
