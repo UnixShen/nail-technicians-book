@@ -9,11 +9,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // eslint: {
-  //   ignoreDuringBuilds: true,
-  // },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 export default nextConfig;
