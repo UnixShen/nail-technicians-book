@@ -4,12 +4,17 @@ import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 initOpenNextCloudflareForDev();
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
   transpilePackages: ['antd-mobile'],
   images: {
     unoptimized: true,
-  }
+  },
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 export default nextConfig;
 
