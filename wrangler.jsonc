@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "next-react-ts-tailwind-nail",
+  "compatibility_date": "2026-02-13",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public",
+  ],
+  "account_id": "60902090209020902090209020902090",
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "next-react-ts-tailwind-nail",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "nail_bucket",
+    },
+  ],
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://nail.fontend.dpdns.org/"
+  }
+}

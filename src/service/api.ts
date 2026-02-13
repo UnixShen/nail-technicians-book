@@ -1,7 +1,3 @@
-export const config = {
-  runtime: 'edge', // 关键！必须加这行
-};
-
 import { AddFormValues, ADD_TYPE_VALUE } from "@/types";
 
 export const addPost = async (data: AddFormValues) => {

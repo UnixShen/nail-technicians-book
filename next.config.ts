@@ -1,6 +1,9 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
 
-const nextConfig = {
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+initOpenNextCloudflareForDev();
+
+const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   transpilePackages: ['antd-mobile'],
@@ -8,5 +11,5 @@ const nextConfig = {
     unoptimized: true,
   }
 };
-module.exports = nextConfig;
+export default nextConfig;
 
